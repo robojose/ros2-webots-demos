@@ -1,0 +1,30 @@
+#VRML_SIM R2023b utf8
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo{
+    title "Simple Room"
+}
+
+Viewpoint {
+  orientation -0.16663 0.357415 0.918961 0.938973
+  position -1.85163 -2.11796 1.31244
+}
+
+
+TexturedBackground {}
+TexturedBackgroundLight {}
+
+RectangleArena {
+  translation 0 0 0
+  rotation 0 0 1 0
+  floorSize 2 2
+  wallHeight 0.3
+}
+
+E-puck {
+    translation 0 0 0 
+    controller "<extern>"
+}

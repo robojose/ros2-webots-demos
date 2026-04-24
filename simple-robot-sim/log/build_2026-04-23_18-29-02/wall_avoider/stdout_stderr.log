@@ -1,0 +1,35 @@
+running egg_info
+creating ../build/wall_avoider/wall_avoider.egg-info
+writing ../build/wall_avoider/wall_avoider.egg-info/PKG-INFO
+writing dependency_links to ../build/wall_avoider/wall_avoider.egg-info/dependency_links.txt
+writing entry points to ../build/wall_avoider/wall_avoider.egg-info/entry_points.txt
+writing requirements to ../build/wall_avoider/wall_avoider.egg-info/requires.txt
+writing top-level names to ../build/wall_avoider/wall_avoider.egg-info/top_level.txt
+writing manifest file '../build/wall_avoider/wall_avoider.egg-info/SOURCES.txt'
+reading manifest file '../build/wall_avoider/wall_avoider.egg-info/SOURCES.txt'
+writing manifest file '../build/wall_avoider/wall_avoider.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build
+creating /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib
+creating /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider
+copying wall_avoider/__init__.py -> /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider
+copying wall_avoider/wall_avoider_node.py -> /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider
+running install
+running install_lib
+creating /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider
+copying /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider/__init__.py -> /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider
+copying /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider/wall_avoider_node.py -> /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider
+byte-compiling /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider/__init__.py to __init__.cpython-310.pyc
+byte-compiling /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider/wall_avoider_node.py to wall_avoider_node.cpython-310.pyc
+running install_data
+creating /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/ament_index
+creating /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/ament_index/resource_index
+creating /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/ament_index/resource_index/packages
+copying resource/wall_avoider -> /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/ament_index/resource_index/packages
+copying package.xml -> /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/wall_avoider
+running install_egg_info
+Copying ../build/wall_avoider/wall_avoider.egg-info to /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider-0.0.0-py3.10.egg-info
+running install_scripts
+Installing wall_avoider_node script to /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/wall_avoider
+writing list of installed files to '/ros2-webots-demos/simple-robot-sim/build/wall_avoider/install.log'

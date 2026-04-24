@@ -1,0 +1,37 @@
+[1.146s] Invoking command in '/ros2-webots-demos/simple-robot-sim/wall_avoider': PYTHONPATH=/ros2-webots-demos/simple-robot-sim/build/wall_avoider/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/wall_avoider build --build-base /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build install --record /ros2-webots-demos/simple-robot-sim/build/wall_avoider/install.log --single-version-externally-managed install_data
+[1.532s] running egg_info
+[1.534s] creating ../build/wall_avoider/wall_avoider.egg-info
+[1.535s] writing ../build/wall_avoider/wall_avoider.egg-info/PKG-INFO
+[1.536s] writing dependency_links to ../build/wall_avoider/wall_avoider.egg-info/dependency_links.txt
+[1.537s] writing entry points to ../build/wall_avoider/wall_avoider.egg-info/entry_points.txt
+[1.538s] writing requirements to ../build/wall_avoider/wall_avoider.egg-info/requires.txt
+[1.538s] writing top-level names to ../build/wall_avoider/wall_avoider.egg-info/top_level.txt
+[1.539s] writing manifest file '../build/wall_avoider/wall_avoider.egg-info/SOURCES.txt'
+[1.542s] reading manifest file '../build/wall_avoider/wall_avoider.egg-info/SOURCES.txt'
+[1.544s] writing manifest file '../build/wall_avoider/wall_avoider.egg-info/SOURCES.txt'
+[1.545s] running build
+[1.545s] running build_py
+[1.546s] creating /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build
+[1.547s] creating /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib
+[1.547s] creating /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider
+[1.548s] copying wall_avoider/__init__.py -> /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider
+[1.548s] copying wall_avoider/wall_avoider_node.py -> /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider
+[1.550s] running install
+[1.550s] running install_lib
+[1.551s] creating /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider
+[1.551s] copying /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider/__init__.py -> /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider
+[1.552s] copying /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build/lib/wall_avoider/wall_avoider_node.py -> /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider
+[1.554s] byte-compiling /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider/__init__.py to __init__.cpython-310.pyc
+[1.557s] byte-compiling /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider/wall_avoider_node.py to wall_avoider_node.cpython-310.pyc
+[1.562s] running install_data
+[1.563s] creating /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/ament_index
+[1.563s] creating /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/ament_index/resource_index
+[1.563s] creating /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/ament_index/resource_index/packages
+[1.564s] copying resource/wall_avoider -> /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/ament_index/resource_index/packages
+[1.564s] copying package.xml -> /ros2-webots-demos/simple-robot-sim/install/wall_avoider/share/wall_avoider
+[1.565s] running install_egg_info
+[1.568s] Copying ../build/wall_avoider/wall_avoider.egg-info to /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages/wall_avoider-0.0.0-py3.10.egg-info
+[1.575s] running install_scripts
+[1.614s] Installing wall_avoider_node script to /ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/wall_avoider
+[1.616s] writing list of installed files to '/ros2-webots-demos/simple-robot-sim/build/wall_avoider/install.log'
+[1.645s] Invoked command in '/ros2-webots-demos/simple-robot-sim/wall_avoider' returned '0': PYTHONPATH=/ros2-webots-demos/simple-robot-sim/build/wall_avoider/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2-webots-demos/simple-robot-sim/install/wall_avoider/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/wall_avoider build --build-base /ros2-webots-demos/simple-robot-sim/build/wall_avoider/build install --record /ros2-webots-demos/simple-robot-sim/build/wall_avoider/install.log --single-version-externally-managed install_data
