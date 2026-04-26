@@ -1,0 +1,5 @@
+<robot name="e-puck">
+  <webots>
+    <plugin type="webots_ros2_driver.ros2_supervisor.Ros2Supervisor" />
+  </webots>
+</robot>

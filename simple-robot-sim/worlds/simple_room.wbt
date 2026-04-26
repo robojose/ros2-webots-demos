@@ -18,13 +18,13 @@ TexturedBackground {}
 TexturedBackgroundLight {}
 
 RectangleArena {
-  translation 0 0 0
+  translation 0 0 0.001
   rotation 0 0 1 0
   floorSize 2 2
   wallHeight 0.3
 }
 
 E-puck {
-    translation 0 0 0 
+    translation 0 0 0.001 
     controller "<extern>"
 }
