@@ -6,6 +6,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 
 WorldInfo{
     title "Simple Room"
+    basicTimeStep 20
 }
 
 Viewpoint {

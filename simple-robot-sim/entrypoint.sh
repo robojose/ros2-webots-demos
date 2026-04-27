@@ -1,4 +1,11 @@
 #!/bin/bash
+Xvfb :99 -screen 0 1280x1024x24 &
+export DISPLAY=:99
+sleep 2
+
+echo "📡 Starting x11vnc on port 5900..."
+x11vnc -display :99 -nopw -forever -shared -bg -o /tmp/x11vnc.log
+sleep 1#!/bin/bash
 set -e
 
 echo "🖥️  Starting virtual display (Xvfb)..."

@@ -28,6 +28,20 @@ def generate_launch_description():
         respawn=False,
     )
 
+    diffdrive_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['diffdrive_controller', '--controller-manager-timeout', '30'],
+        output='screen',
+    )
+
+    joint_state_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster', '--controller-manager-timeout', '30'],
+        output='screen',
+    )
+
     wall_avoider_node = Node(
         package='wall_avoider',
         executable='wall_avoider_node',
@@ -36,5 +50,8 @@ def generate_launch_description():
 
     return LaunchDescription([
         epuck_driver,
+        diffdrive_spawner,
+        joint_state_spawner,
         wall_avoider_node,
     ])
+        

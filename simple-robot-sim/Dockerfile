@@ -1,5 +1,5 @@
 # Force amd64 for Webots Linux binary compatibility (runs via Rosetta on M2)
-FROM --platform=linux/amd64 osrf/ros:humble-desktop
+FROM osrf/ros:humble-desktop
 
 # Avoid interactive prompts during apt installs
 ENV DEBIAN_FRONTEND=noninteractive
@@ -8,6 +8,7 @@ ENV USERNAME=user
 # Virtual display + misc dependencies
 RUN apt-get update && apt-get install -y \
     xvfb \
+    x11vnc\
     x11-utils \
     wget \
     curl \
@@ -35,7 +36,7 @@ RUN wget -q https://github.com/cyberbotics/webots/releases/download/R2025a/webot
 # Set Webots environment
 ENV WEBOTS_HOME=/usr/local/webots
 ENV PATH=$WEBOTS_HOME:$PATH
-ENV LD_LIBRARY_PATH=$WEBOTS_HOME/lib/controller:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/usr/local/webots/lib/controller
 
 # Install webots_ros2 packages
 RUN apt-get update && apt-get install -y \
