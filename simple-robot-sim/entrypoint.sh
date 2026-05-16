@@ -1,17 +1,14 @@
 #!/bin/bash
-Xvfb :99 -screen 0 1280x1024x24 &
-export DISPLAY=:99
-sleep 2
-
-echo "📡 Starting x11vnc on port 5900..."
-x11vnc -display :99 -nopw -forever -shared -bg -o /tmp/x11vnc.log
-sleep 1#!/bin/bash
 set -e
 
 echo "🖥️  Starting virtual display (Xvfb)..."
 Xvfb :99 -screen 0 1280x1024x24 &
 export DISPLAY=:99
 sleep 2
+
+echo "📡 Starting x11vnc on port 5900..."
+x11vnc -display :99 -passwd robot -forever -shared -bg -o /tmp/x11vnc.log
+sleep 1
 
 echo "🤖 Sourcing ROS2 environment..."
 source /opt/ros/humble/setup.bash
@@ -35,11 +32,10 @@ for i in $(seq 1 30); do
 done
 
 echo "🚀 Launching ROS2 driver + wall_avoider node..."
-ros2 launch wall_avoider robot_launch.py &
-NODE_PID=$!
+ros2 launch wall_avoider robot_launch.py
 
 echo "✅ Everything running. Press Ctrl+C to stop."
 
-trap "echo 'Shutting down...'; kill $NODE_PID $WEBOTS_PID 2>/dev/null; exit 0" SIGINT SIGTERM
+trap "echo 'Shutting down...'; kill $WEBOTS_PID 2>/dev/null; exit 0" SIGINT SIGTERM
 
 wait $WEBOTS_PID || sleep infinity

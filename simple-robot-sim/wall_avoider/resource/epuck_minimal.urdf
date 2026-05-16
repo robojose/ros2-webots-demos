@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<robot name="e-puck">
+  <webots>
+    <plugin type="webots_ros2_driver::Ros2Robot" />
+  </webots>
+</robot>

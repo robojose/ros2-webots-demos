@@ -7,7 +7,7 @@ from sensor_msgs.msg import Range
 class WallAvoider(Node):
     def __init__(self):
         super().__init__('wall_avoider')
-        self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
+        self.publisher = self.create_publisher(Twist, '/cmd_vel', 10)
         self.ranges = {}
         for i in range(8):
             self.create_subscription(
@@ -24,13 +24,13 @@ class WallAvoider(Node):
     def move(self):
         cmd = Twist()
         front_right = self.ranges.get(0, 999)
-        front_left = self.ranges.get(7, 999)
+        front_left  = self.ranges.get(7, 999)
         front = min(front_right, front_left)
         if front < 0.06:
             cmd.linear.x = 0.0
             cmd.angular.z = 0.5
         else:
-            cmd.linear.x = 0.2
+            cmd.linear.x = 0.05
             cmd.angular.z = 0.0
         self.publisher.publish(cmd)
 
