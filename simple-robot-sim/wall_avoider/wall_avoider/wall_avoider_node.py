@@ -1,43 +1,55 @@
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Twist
-from sensor_msgs.msg import Range
+from controller import Robot
 
 
 class WallAvoider(Node):
-    def __init__(self):
+    def __init__(self, robot):
         super().__init__('wall_avoider')
-        self.publisher = self.create_publisher(Twist, '/cmd_vel', 10)
-        self.ranges = {}
+        self.robot = robot
+        timestep = int(robot.getBasicTimeStep())
+
+        self.sensors = []
         for i in range(8):
-            self.create_subscription(
-                Range,
-                f'/ps{i}',
-                lambda msg, i=i: self.sensor_callback(i, msg),
-                10
-            )
-        self.timer = self.create_timer(0.1, self.move)
+            ps = robot.getDevice(f'ps{i}')
+            ps.enable(timestep)
+            self.sensors.append(ps)
 
-    def sensor_callback(self, index, msg):
-        self.ranges[index] = msg.range
+        self.left_motor = robot.getDevice('left wheel motor')
+        self.right_motor = robot.getDevice('right wheel motor')
+        self.left_motor.setPosition(float('inf'))
+        self.right_motor.setPosition(float('inf'))
+        self.left_motor.setVelocity(0.0)
+        self.right_motor.setVelocity(0.0)
 
-    def move(self):
-        cmd = Twist()
-        front_right = self.ranges.get(0, 999)
-        front_left  = self.ranges.get(7, 999)
-        front = min(front_right, front_left)
-        if front < 0.06:
-            cmd.linear.x = 0.0
-            cmd.angular.z = 0.5
+        self.timestep = timestep
+        self.get_logger().info('Wall avoider ready!')
+
+    def step(self):
+        if self.robot.step(self.timestep) == -1:
+            return False
+
+        front = max(self.sensors[0].getValue(), self.sensors[7].getValue())
+
+        if front > 80:
+            self.left_motor.setVelocity(-3.0)
+            self.right_motor.setVelocity(3.0)
         else:
-            cmd.linear.x = 0.05
-            cmd.angular.z = 0.0
-        self.publisher.publish(cmd)
+            self.left_motor.setVelocity(3.0)
+            self.right_motor.setVelocity(3.0)
+
+        return True
 
 
 def main(args=None):
     rclpy.init(args=args)
-    node = WallAvoider()
-    rclpy.spin(node)
+    robot = Robot()
+    node = WallAvoider(robot)
+
+    while rclpy.ok():
+        if not node.step():
+            break
+        rclpy.spin_once(node, timeout_sec=0)
+
     node.destroy_node()
     rclpy.shutdown()
